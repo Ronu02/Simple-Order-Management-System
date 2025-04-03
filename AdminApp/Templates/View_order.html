@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'Dashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="table-responsive">
+                <table class="table text-nowrap align-middle mb-0">
+                  <thead>
+                    <tr class="border-2 border-bottom border-primary border-0">
+                      <th scope="col" class="text-center">Item</th>
+                      <th scope="col" class="text-center">Quantity</th>
+                      <th scope="col" class="text-center">Amount</th>
+                      <th scope="col" class="text-center">Status</th>
+                      <th scope="col" class="text-center">Created At</th>
+                      <th scope="col" class="text-center">Updated At</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+
+                  {% for b in order %}
+                    <tr>
+                      <td class="text-center fw-medium">{{b.Name}}</td>
+                      <td class="text-center fw-medium">{{b.Quantity}}</td>
+                      <td class="text-center fw-medium">{{b.Amount}}</td>
+                      <td class="text-center fw-medium">{{b.Status}}</td>
+                      <td class="text-center fw-medium">{{b.CreatedAt}}</td>
+                      <td class="text-center fw-medium">{{b.UpdatedAt}}</td>
+                    </tr>
+                  {% endfor %}
+				  </tbody>
+
+	</div>
+</body>
+</html>
+{% endblock %}
